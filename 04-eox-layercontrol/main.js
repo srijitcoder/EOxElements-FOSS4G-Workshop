@@ -11,7 +11,7 @@ document.querySelector("eox-map").config = {
         id: "stacLayer",
         // add layer properties
       },
-      url: "https://tamn.snapplanet.io/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=S2",
+      url: "https://planetarycomputer.microsoft.com/api/stac/v1/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=sentinel-2-l2a&datetime=2024-06-17T00:00:00Z/2024-06-18T00:00:00Z",
       displayPreview: true,
     },
     {
