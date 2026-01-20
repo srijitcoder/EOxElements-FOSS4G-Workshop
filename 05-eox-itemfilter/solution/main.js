@@ -72,6 +72,7 @@ document.querySelector("eox-itemfilter").addEventListener("select", (event) => {
       const wmsLink = json.links.find((l) => l.rel === "wms");
       // push the new layer definition to the eox-map layers
       eoxMap.layers = [
+        ...eoxMap.layers,
         {
           type: "Tile",
           properties: {
@@ -86,7 +87,6 @@ document.querySelector("eox-itemfilter").addEventListener("select", (event) => {
             },
           },
         },
-        ...eoxMap.layers,
       ];
     });
 });

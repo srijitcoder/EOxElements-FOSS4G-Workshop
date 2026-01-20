@@ -78,6 +78,7 @@ document.querySelector("eox-itemfilter").addEventListener("select", (event) => {
     .then((json) => {
       const wmsLink = json.links.find((l) => l.rel === "wms");
       eoxMap.layers = [
+        ...eoxMap.layers,
         {
           type: "Tile",
           properties: {
@@ -92,7 +93,6 @@ document.querySelector("eox-itemfilter").addEventListener("select", (event) => {
             },
           },
         },
-        ...eoxMap.layers,
       ];
     });
   // set the `for` property of eox-stacinfo

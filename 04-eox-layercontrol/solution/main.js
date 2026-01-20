@@ -7,36 +7,6 @@ import "https://unpkg.com/@eox/layercontrol/dist/eox-layercontrol.js";
 document.querySelector("eox-map").config = {
   layers: [
     {
-      type: "STAC",
-      properties: {
-        id: "stacLayer",
-        // add layer properties
-        title: "STAC Group",
-      },
-      url: "https://planetarycomputer.microsoft.com/api/stac/v1/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=sentinel-2-l2a&datetime=2024-06-17T00:00:00Z/2024-06-18T00:00:00Z",
-      displayPreview: true,
-    },
-    {
-      type: "Vector",
-      properties: {
-        id: "regions",
-        // add layer properties
-        title: "Regions Vector",
-        visible: false,
-      },
-      source: {
-        type: "Vector",
-        url: "https://openlayers.org/data/vector/ecoregions.json",
-        format: "GeoJSON",
-        attributions: "Regions: @ openlayers.org",
-      },
-      style: {
-        "stroke-color": "#232323",
-        "stroke-width": 1,
-        "fill-color": ["string", ["get", "COLOR"], "#eee"],
-      },
-    },
-    {
       type: "Group",
       properties: {
         // add layer properties
@@ -72,6 +42,36 @@ document.querySelector("eox-map").config = {
           },
         },
       ],
+    },
+    {
+      type: "Vector",
+      properties: {
+        id: "regions",
+        // add layer properties
+        title: "Regions Vector",
+        visible: false,
+      },
+      source: {
+        type: "Vector",
+        url: "https://openlayers.org/data/vector/ecoregions.json",
+        format: "GeoJSON",
+        attributions: "Regions: @ openlayers.org",
+      },
+      style: {
+        "stroke-color": "#232323",
+        "stroke-width": 1,
+        "fill-color": ["string", ["get", "COLOR"], "#eee"],
+      },
+    },
+    {
+      type: "STAC",
+      properties: {
+        id: "stacLayer",
+        // add layer properties
+        title: "STAC Group",
+      },
+      url: "https://planetarycomputer.microsoft.com/api/stac/v1/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=sentinel-2-l2a&datetime=2024-06-17T00:00:00Z/2024-06-18T00:00:00Z",
+      displayPreview: true,
     },
   ],
   view: {

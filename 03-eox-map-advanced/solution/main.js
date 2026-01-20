@@ -22,14 +22,6 @@ document.querySelector("eox-map").config = {
   },
   layers: [
     {
-      type: "STAC",
-      properties: {
-        id: "stacLayer",
-      },
-      url: "https://planetarycomputer.microsoft.com/api/stac/v1/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=sentinel-2-l2a&datetime=2024-06-17T00:00:00Z/2024-06-18T00:00:00Z",
-      displayPreview: true,
-    },
-    {
       type: "Tile",
       properties: {
         id: "s2cloudless",
@@ -39,6 +31,14 @@ document.querySelector("eox-map").config = {
         url: "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
         layer: "s2cloudless-2020_3857",
       },
+    },
+    {
+      type: "STAC",
+      properties: {
+        id: "stacLayer",
+      },
+      url: "https://planetarycomputer.microsoft.com/api/stac/v1/search?bbox=125.727770,-29.514858,133.412707,-23.673395&collections=sentinel-2-l2a&datetime=2024-06-17T00:00:00Z/2024-06-18T00:00:00Z",
+      displayPreview: true,
     },
   ],
   view: {

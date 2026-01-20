@@ -5,6 +5,15 @@ import "https://unpkg.com/@eox/map/dist/eox-map.js";
 // Set the layers property of the eox-map
 document.querySelector("eox-map").layers = [
   {
+    type: "Tile",
+    properties: {
+      id: "osm",
+    },
+    source: {
+      type: "OSM",
+    },
+  },
+  {
     type: "Vector",
     properties: {
       id: "regions",
@@ -19,15 +28,6 @@ document.querySelector("eox-map").layers = [
       "stroke-color": "#232323",
       "stroke-width": 1,
       "fill-color": ["string", ["get", "COLOR"], "#eee"],
-    },
-  },
-  {
-    type: "Tile",
-    properties: {
-      id: "osm",
-    },
-    source: {
-      type: "OSM",
     },
   },
 ];
